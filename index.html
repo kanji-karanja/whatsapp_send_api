@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!--  Social tags      -->
+    <meta name="keywords"
+          content="Whatsapp, Link Generator, Whatsapp API, Direct send whatsapp">
+    <meta name="description"
+          content="Create a direct Whatsapp link to message anyone without saving their numbers">
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Whatsapp Link Generator | Powered by Cryosoft">
+    <meta itemprop="description"
+          content="Create a direct Whatsapp link to message anyone without saving their numbers">
+    <meta name="twitter:card" content="product">
+    <meta name="twitter:site" content="@karimkkanji">
+    <meta name="twitter:title" content="Whatsapp Link Generator | Powered by Cryosoft">
+    <meta name="twitter:description"
+          content="Create a direct Whatsapp link to message anyone without saving their numbers">
+    <meta property="og:title" content="Whatsapp Link Generator | Powered by Cryosoft"/>
+    <meta property="og:type" content="Whatsapp Link Generator"/>
+    <meta itemprop="image" content="https://whatsappapi.cryosoft.co.ke/WhatsApp_Logo.png">
+    <meta name="twitter:image" content="https://whatsappapi.cryosoft.co.ke/WhatsApp_Logo.png">
+    <meta property="og:url" content="https://whatsappapi.cryosoft.co.ke"/>
+    <meta property="og:image" content="https://whatsappapi.cryosoft.co.ke/WhatsApp_Logo.png"/>
+    <link rel="apple-touch-icon" href="https://protection.cryosoft.co.ke/images/classic.png">
+    <link rel="apple-touch-startup-image" href="https://protection.cryosoft.co.ke/images/classic.png">
+    <meta property="og:description"
+          content="Create a direct Whatsapp link to message anyone without saving their numbers"/>
+    <meta property="og:site_name" content="Whatsapp Link Generator | Powered by Cryosoft"/>
+    <meta name="theme-color" content="#92FE9D"/>
+    <!-- reuse same icon for Safari -->
+    <link rel="canonical" href="https://whatsappapi.cryosoft.co.ke"/>
+    <title>Whatsapp Link Generator | Powered by Cryosoft</title>
+    <style>
+        body{
+            background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+        }
+        .card{
+            background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+        }
+             /* The snackbar - position it at the bottom and in the middle of the screen */
+         #snackbar {
+             visibility: hidden; /* Hidden by default. Visible on click */
+             min-width: 250px; /* Set a default minimum width */
+             margin-left: -125px; /* Divide value of min-width by 2 */
+             background-color: #333; /* Black background color */
+             color: #fff; /* White text color */
+             text-align: center; /* Centered text */
+             border-radius: 2px; /* Rounded borders */
+             padding: 16px; /* Padding */
+             position: fixed; /* Sit on top of the screen */
+             z-index: 1; /* Add a z-index if needed */
+             left: 50%; /* Center the snackbar */
+             bottom: 30px; /* 30px from the bottom */
+         }
+
+        /* Show the snackbar when clicking on a button (class added with JavaScript) */
+        #snackbar.show {
+            visibility: visible; /* Show the snackbar */
+            /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+            However, delay the fade out process for 2.5 seconds */
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        /* Animations to fade the snackbar in and out */
+        @-webkit-keyframes fadein {
+            from {bottom: 0; opacity: 0;}
+            to {bottom: 30px; opacity: 1;}
+        }
+
+        @keyframes fadein {
+            from {bottom: 0; opacity: 0;}
+            to {bottom: 30px; opacity: 1;}
+        }
+
+        @-webkit-keyframes fadeout {
+            from {bottom: 30px; opacity: 1;}
+            to {bottom: 0; opacity: 0;}
+        }
+
+        @keyframes fadeout {
+            from {bottom: 30px; opacity: 1;}
+            to {bottom: 0; opacity: 0;}
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row" style="margin-top: 80px">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <center>
+                    <img src="WhatsApp_Logo.png" class="img-fluid" height="100" width="100"><br><br>
+                    <h2>Direct Message Link Generator</h2>
+                </center>
+                    <input class="form-control" placeholder="Phone Number with country code" onkeydown="getValue(this.value)" id="phonenumber">
+                    <small class="blockquote-footer">Please enter Phone number with country code e.g. +254 7444xxxxxx</small>
+                    <textarea class="form-control" placeholder="Message" style="margin-top: 10px" id="message"></textarea>
+                    <small class="blockquote-footer" style="margin-bottom: 20px;">Leave empty to contact directly without message.</small>
+                    <button class="btn btn-success btn-block disabled" disabled id="copylink" onclick="copy()">Click to copy</button>
+            </div>
+        </div>
+            <div class="text-center">
+            <div class="text-center" style="margin-top: 30px">
+                Powered by <a href="https://cryosoft.co.ke">Cryosoft Corporation</a>
+            </div>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</div>
+</div>
+<div id="snackbar"></div>
+<script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous" async></script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous" async></script>
+<script>
+    let phone = '';
+    let getValue=(gotValue)=>{
+        if(gotValue!==''){
+           let copylink = document.getElementById('copylink');
+           copylink.disabled =false;
+           copylink.className = 'btn btn-success btn-block';
+        }
+    };
+    let copy = ()=>{
+        let phone  = document.getElementById('phonenumber').value.replace('+','').trim();
+        let message = document.getElementById('message').value;
+        let link = "https://api.whatsapp.om/send?phone=";
+        link = link + phone;
+        if(message!==''){
+            link=link+'&text='+encodeURI(message);
+        }
+        console.log(link);
+       const el = document.createElement('textarea');
+       el.value =link;
+       document.body.appendChild(el);
+        el.select();
+        document.execCommand("copy");
+        showSnackBar();
+        document.body.removeChild(el);
+    };
+    const showSnackBar=()=>{
+        let x = document.getElementById("snackbar");
+        x.innerHTML='Link copied!';
+        x.className = "show";
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    };
+</script>
+</body>
+</html>
