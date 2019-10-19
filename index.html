@@ -106,6 +106,7 @@
                     <textarea class="form-control" placeholder="Message" style="margin-top: 10px" id="message"></textarea>
                     <small class="blockquote-footer" style="margin-bottom: 20px;">Leave empty to contact directly without message.</small>
                     <button class="btn btn-success btn-block disabled" disabled id="copylink" onclick="copy()">Click to copy</button>
+                    <button class="btn btn-info btn-block disabled" disabled id="openlink" onclick="openlink()">Open in Whatsapp</button>
             </div>
         </div>
             <div class="text-center">
@@ -135,14 +136,17 @@
     let getValue=(gotValue)=>{
         if(gotValue!==''){
            let copylink = document.getElementById('copylink');
+           let openlink = document.getElementById('openlink');
            copylink.disabled =false;
            copylink.className = 'btn btn-success btn-block';
+           openlink.disabled =false;
+           openlink.className = 'btn btn-info btn-block';
         }
     };
     let copy = ()=>{
         let phone  = document.getElementById('phonenumber').value.replace('+','').trim();
         let message = document.getElementById('message').value;
-        let link = "https://api.whatsapp.om/send?phone=";
+        let link = "https://api.whatsapp.com/send?phone=";
         link = link + phone;
         if(message!==''){
             link=link+'&text='+encodeURI(message);
@@ -162,6 +166,18 @@
         x.className = "show";
         setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
     };
+    const openlink = ()=>{
+        let phone  = document.getElementById('phonenumber').value.replace('+','').trim();
+        let message = document.getElementById('message').value;
+        let link = "https://api.whatsapp.com/send?phone=";
+        link = link + phone;
+        if(message!==''){
+            link=link+'&text='+encodeURI(message);
+        }
+        console.log(link);
+        var win = window.open(link, '_blank');
+        win.focus();
+    }
 </script>
 </body>
 </html>
