@@ -1,0 +1,113 @@
+{
+    "dir": "ltr",
+    "lang": "English",
+    "name": "Whatsapp Link Generator ",
+    "scope": "/",
+    "display": "standalone",
+    "start_url": "./",
+    "short_name": "WA Link Generator",
+    "theme_color": "#92FE9D",
+    "description": "Create a direct Whatsapp link to message anyone without saving their numbers",
+    "orientation": "any",
+    "background_color": "#92FE9D",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "./images/757b6233-cb17-c164-d130-3e2c175c83f0.webPlatform.png",
+            "sizes": "44x44",
+            "type": "image/png"
+        },
+        {
+            "src": "./images/b871348d-2906-f152-c8f7-592f1c6a5eae.webPlatform.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {
+            "src": "./images/f13591ac-c220-d983-ca5d-dcdee5862e94.webPlatform.png",
+            "sizes": "1240x600",
+            "type": "image/png"
+        },
+        {
+            "src": "./images/405ceda4-1925-f769-5dd0-c4044ba91d6a.webPlatform.png",
+            "sizes": "300x300",
+            "type": "image/png"
+        },
+        {
+            "src": "./images/f9db4dc1-f4b7-c3aa-b496-9da0ade6a7e3.webPlatform.png",
+            "sizes": "150x150",
+            "type": "image/png"
+        },
+        {
+            "src": "./images/2fce91bc-23ce-2dd7-33e0-39d528c0e2cb.webPlatform.png",
+            "sizes": "88x88",
+            "type": "image/png"
+        },
+        {
+            "src": "./images/20f0bc4e-591c-9b00-d42d-cd45a8d36185.webPlatform.png",
+            "sizes": "24x24",
+            "type": "image/png"
+        },
+        {
+            "src": "./images/236e307d-a9ab-6d04-4cae-a177561a46a7.webPlatform.png",
+            "sizes": "50x50",
+            "type": "image/png"
+        },
+        {
+            "src": "./images/8505e57c-82bb-c24f-055a-9ad69e4afc9b.webPlatform.png",
+            "sizes": "620x300",
+            "type": "image/png"
+        },
+        {
+            "src": "./images/aa7ed0da-d8d9-9472-324f-67c7a64e2e73.webPlatform.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "./images/20e9a043-a9b4-1943-8a37-5704fba1e8a3.webPlatform.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "./images/4572cb79-ad42-4a70-23a0-951a690b4b60.webPlatform.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "./images/12267b68-8dfa-1092-2935-518b411c4c84.webPlatform.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "./images/381eecbb-7888-9b0a-16ca-28aee30eb198.webPlatform.png",
+            "sizes": "36x36",
+            "type": "image/png"
+        },
+        {
+            "src": "./images/21176b69-987a-0d91-181a-b81ef0396599.webPlatform.png",
+            "sizes": "1024x1024",
+            "type": "image/png"
+        },
+        {
+            "src": "./images/cebe3c2a-1116-9977-56aa-ae75702e24c2.webPlatform.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "./images/108b8611-168f-7640-96b4-cdc63d8b6f1b.webPlatform.png",
+            "sizes": "152x152",
+            "type": "image/png"
+        },
+        {
+            "src": "./images/42cba6dc-249e-50a0-8dca-82a05a93cc7f.webPlatform.png",
+            "sizes": "120x120",
+            "type": "image/png"
+        },
+        {
+            "src": "./images/4793a50c-ffc7-4149-b252-1da55a48c2cb.webPlatform.png",
+            "sizes": "76x76",
+            "type": "image/png"
+        }
+    ],
+    "screenshots": []
+}

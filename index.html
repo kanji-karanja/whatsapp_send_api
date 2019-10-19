@@ -17,6 +17,7 @@
           content="Create a direct Whatsapp link to message anyone without saving their numbers">
     <meta name="twitter:card" content="product">
     <meta name="twitter:site" content="@karimkkanji">
+    <link rel="manifest" href="manifest.json"></link>
     <meta name="twitter:title" content="Whatsapp Link Generator | Powered by Cryosoft">
     <meta name="twitter:description"
           content="Create a direct Whatsapp link to message anyone without saving their numbers">
@@ -26,8 +27,8 @@
     <meta name="twitter:image" content="https://whatsappapi.cryosoft.co.ke/WhatsApp_Logo.png">
     <meta property="og:url" content="https://whatsappapi.cryosoft.co.ke"/>
     <meta property="og:image" content="https://whatsappapi.cryosoft.co.ke/WhatsApp_Logo.png"/>
-    <link rel="apple-touch-icon" href="https://protection.cryosoft.co.ke/images/classic.png">
-    <link rel="apple-touch-startup-image" href="https://protection.cryosoft.co.ke/images/classic.png">
+    <link rel="apple-touch-icon" href="https://whatsappapi.cryosoft.co.ke/WhatsApp_Logo.png">
+    <link rel="apple-touch-startup-image" href="https://whatsappapi.cryosoft.co.ke/WhatsApp_Logo.png">
     <meta property="og:description"
           content="Create a direct Whatsapp link to message anyone without saving their numbers"/>
     <meta property="og:site_name" content="Whatsapp Link Generator | Powered by Cryosoft"/>
@@ -132,6 +133,26 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous" async></script>
 <script>
+    // This is the service worker with the Advanced caching
+
+// Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
+
+// Check compatibility for the browser we're running this in
+if ("serviceWorker" in navigator) {
+  if (navigator.serviceWorker.controller) {
+    console.log("[PWA Builder] active service worker found, no need to register");
+  } else {
+    // Register the service worker
+    navigator.serviceWorker
+      .register("pwabuilder-sw.js", {
+        scope: "./"
+      })
+      .then(function (reg) {
+        console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
+      });
+  }
+}
+
     let phone = '';
     let getValue=(gotValue)=>{
         if(gotValue!==''){
