@@ -94,8 +94,8 @@
 <body>
 <div class="container">
     <div class="row" style="margin-top: 80px">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4">
+        <div class="col-lg-4 col-md-3"></div>
+        <div class="col-lg-4 col-md-6">
         <div class="card">
             <div class="card-body">
                 <center>
@@ -115,7 +115,7 @@
                 Powered by <a href="https://cryosoft.co.ke">Cryosoft Corporation</a>
             </div>
         </div>
-        <div class="col-sm-4"></div>
+        <div class="col-lg-4 col-md-3"></div>
     </div>
 </div>
 </div>
@@ -132,6 +132,7 @@
         src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous" async></script>
+        <script src="manup.js"></script>
 <script>
     // This is the service worker with the Advanced caching
 
@@ -165,12 +166,12 @@ if ("serviceWorker" in navigator) {
         }
     };
     let copy = ()=>{
-        let phone  = document.getElementById('phonenumber').value.replace('+','').trim();
+        let phone  = document.getElementById('phonenumber').value.replace('+','').replace(/\s/g,'').trim();
         let message = document.getElementById('message').value;
-        let link = "https://api.whatsapp.com/send?phone=";
+        let link = "https://wa.me/";
         link = link + phone;
         if(message!==''){
-            link=link+'&text='+encodeURI(message);
+            link=link+'?text='+encodeURI(message);
         }
         console.log(link);
        const el = document.createElement('textarea');
@@ -190,10 +191,10 @@ if ("serviceWorker" in navigator) {
     const openlink = ()=>{
         let phone  = document.getElementById('phonenumber').value.replace('+','').trim();
         let message = document.getElementById('message').value;
-        let link = "https://api.whatsapp.com/send?phone=";
+        let link = "https://wa.me/";
         link = link + phone;
         if(message!==''){
-            link=link+'&text='+encodeURI(message);
+            link=link+'?text='+encodeURI(message);
         }
         console.log(link);
         var win = window.open(link, '_blank');

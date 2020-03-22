@@ -3,7 +3,7 @@
 const CACHE = "Whatsapp-link-generator";
 const precacheFiles = [
   /* Add an array of files to precache for your app */
-  'index.html'
+  './index.html'
 ];
 
 // TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
@@ -48,7 +48,7 @@ self.addEventListener("install", function (event) {
 
       return cache.addAll(precacheFiles).then(function () {
         if (offlineFallbackPage === "index.html") {
-          return cache.add(new Response("TODO: Update the value of the offlineFallbackPage constant in the serviceworker."));
+          return cache.add(offlineFallbackPage);
         }
 
         return cache.add(offlineFallbackPage);
@@ -147,6 +147,9 @@ function fromCache(request) {
 }
 
 function updateCache(request, response) {
+  if(!(request.url.indexOf('http') === 0)){
+    //skip request
+}
   if (!comparePaths(request.url, avoidCachingPaths)) {
     return caches.open(CACHE).then(function (cache) {
       return cache.put(request, response);
