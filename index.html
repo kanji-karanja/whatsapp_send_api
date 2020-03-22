@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="preload" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <!--  Social tags      -->
     <meta name="keywords"
           content="Whatsapp, Link Generator, Whatsapp API, Direct send whatsapp">
@@ -99,12 +99,16 @@
         <div class="card">
             <div class="card-body">
                 <center>
-                    <img src="WhatsApp_Logo.png" class="img-fluid" height="100" width="100"><br><br>
+                    <img src="WhatsApp_Logo.png" class="img-fluid" alt="Whatsapp Link Generator" height="100" width="100"><br><br>
                     <h2>Direct Message Link Generator</h2>
                 </center>
+                <label>Phone Number with Country code
                     <input class="form-control" placeholder="Phone Number with country code" onkeydown="getValue(this.value)" id="phonenumber">
+                </label>
                     <small class="blockquote-footer">Please enter Phone number with country code e.g. +254 7444xxxxxx</small>
+                <label>Message
                     <textarea class="form-control" placeholder="Message" style="margin-top: 10px" id="message"></textarea>
+                </label>
                     <small class="blockquote-footer" style="margin-bottom: 20px;">Leave empty to contact directly without message.</small>
                     <button class="btn btn-success btn-block disabled" disabled id="copylink" onclick="copy()">Click to copy</button>
                     <button class="btn btn-info btn-block disabled" disabled id="openlink" onclick="openlink()">Open in Whatsapp</button>
