@@ -102,11 +102,11 @@
                     <img src="WhatsApp_Logo.png" class="img-fluid" alt="Whatsapp Link Generator" height="100" width="100"><br><br>
                     <h2>Direct Message Link Generator</h2>
                 </center>
-                <label for="phone">Phone Number with Country code</label>
-                <input id="phone" class="form-control" placeholder="Phone Number with country code" onkeydown="getValue(this.value)" id="phonenumber">
+                <label for="phonenumber">Phone Number with Country code</label>
+                <input class="form-control" placeholder="Phone Number with country code" onkeydown="getValue(this.value)" id="phonenumber">
                     <small class="blockquote-footer">Please enter Phone number with country code e.g. +254 7444xxxxxx</small>
                 <label for="message">Message</label>
-                    <textarea id="message" class="form-control" placeholder="Message" style="margin-top: 10px" id="message"></textarea>
+                    <textarea class="form-control" placeholder="Message" style="margin-top: 10px" id="message"></textarea>
                     <small class="blockquote-footer" style="margin-bottom: 20px;">Leave empty to contact directly without message.</small>
                     <button class="btn btn-success btn-block disabled" disabled id="copylink" onclick="copy()">Click to copy</button>
                     <button class="btn btn-info btn-block disabled" disabled id="openlink" onclick="openlink()">Open in Whatsapp</button>
