@@ -318,6 +318,42 @@ if ("serviceWorker" in navigator) {
       });
   }
 }
+const shareApp = () => {
+  if (navigator.share) {
+    navigator
+      .share({
+        title: "Whatsapp DLG",
+        text: "A faster way to text number without saving to your Phonebook",
+        url: "https://whatsappapi.crysoft.co.ke",
+      })
+      .then(() => {
+        Snackbar.show({
+        pos: "bottom-center",
+        text: "Thanks for sharing!",
+    });
+      })
+      .catch((err) => {
+        copyToClipboard();
+        Snackbar.show({
+        pos: "bottom-center",
+        text: "Link has been Copied to clipboard!",
+    });
+      });
+  } else {
+    copyToClipboard();
+    Snackbar.show({
+        pos: "bottom-center",
+        text: "Link has been Copied to clipboard!",
+    });
+  }
+};
+const copyToClipboard =()=>{
+    const el = document.createElement('textarea');
+    el.value = "https://whatsappapi.crysoft.co.ke";
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand("copy");
+}
     </script>
 </body>
 
